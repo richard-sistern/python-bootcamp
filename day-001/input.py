@@ -1,5 +1,5 @@
-name = input("What is your name? ")
+user_name = input("What is your name? ")
 
-print(len(name))
+print(len(user_name))
 
 # print("Hello " + input("What is your name? "))
