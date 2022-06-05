@@ -1,0 +1,13 @@
+# String
+print("A string"[0]) # Subscript
+
+# Integer
+print(123 + 345)
+print(1_000)
+
+# Float
+print(3.14159)
+
+# Boolean
+# Always begin with a capital - True/False (reasons!)
+print(True)
