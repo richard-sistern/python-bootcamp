@@ -3,13 +3,13 @@ weight = float(input("Enter your weight in kg: "))
 
 bmi = round(weight / height ** 2)
 
-if bmi <= 18.5:
+if bmi < 18.5:
     advice = "underweight"
-elif bmi > 18.5 and bmi <= 25:
+elif bmi < 25:
     advice = "normal weight"
-elif bmi > 25 and bmi <=30:
+elif bmi < 30:
     advice = "overweight"
-elif bmi > 30 and bmi <= 35:
+elif bmi < 35:
     advice = "obese"
 else:
     advice = "clinically obese"
