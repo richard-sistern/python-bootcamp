@@ -1,3 +1,5 @@
+import random
+
 rock = '''
     _______
 ---'   ____)
@@ -25,10 +27,6 @@ scissors = '''
 ---.__(___)
 '''
 
-human_move = input("Enter your choice (Rock, Paper, Scissors): ")
-
-
-
 def print_move(move):
     if move == "Rock":
         print(rock)
@@ -39,14 +37,12 @@ def print_move(move):
     else:
         print("Unknown move...")
 
+human_move = input("Enter your choice (Rock, Paper, Scissors): ")
 print("You chose:")
 print_move(human_move)
 
-
 moves = ["Rock", "Paper", "Scissors"]
-import random
 computer_move = random.choice(moves)
-
 print("Computer chose:")
 print_move(computer_move)
 
