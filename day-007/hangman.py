@@ -18,7 +18,6 @@ word_list = ["aardvark", "baboon", "camel"]
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
 
 chosen_word = random.choice(word_list)
-print(chosen_word)
 
 guess = input("Pick a letter: ").lower()
 
