@@ -1,7 +1,8 @@
 # - Random word
 # - Swap chars for _ blanks
 # - User guesses
-# - If in word Y/N
+# - If in word Y/Na
+
     # - Update blanked word
     # - Update hangman
 # - End on word/hangman complete
@@ -19,7 +20,10 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
-guess = input("Pick a letter: ").lower
+guess = input("Pick a letter: ").lower()
 
-if guess in chosen_word:
-    print("true")
+for letter in chosen_word:
+    if letter == guess:
+        print("MATCH")
+    else:
+        print("NO MATCH")
