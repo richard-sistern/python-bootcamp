@@ -1,6 +1,6 @@
-def greet():
-    print("PEW")
-    print("PEW")
-    print("PEW")
+def greet(name):
+    print(f"PEW {name}")
+    print(f"PEW {name}")
+    print(f"PEW {name}")
 
-greet()
+greet("Biff")
