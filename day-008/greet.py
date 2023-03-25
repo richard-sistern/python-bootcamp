@@ -7,6 +7,10 @@ greet("Biff")
 
 def greet_with(name, location):
     print(f"Pew {name}")
-    print(f"At {location}")
+    print(f"in the {location}")
 
-greet_with("Marty", "the future")
+# Positional
+greet_with("Marty", "future")
+
+# Keyword
+greet_with(name = "Doc", location = "past")
