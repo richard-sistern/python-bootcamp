@@ -6,7 +6,7 @@ def prime_checker(number):
     # start	Optional. An integer number specifying at which position to start. Default is 0
     # stop	Required. An integer number specifying at which position to stop (not included).
     # step	Optional. An integer number specifying the incrementation. Default is 1
-    for i in range(2, number):
+    for i in range(2, number): # start at 2, all numbers can div by 1
         if number % i == 0:
             prime = False
 
