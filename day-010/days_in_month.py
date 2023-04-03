@@ -11,6 +11,7 @@ def is_leap(year):
     return False
 
 def days_in_month(year, month):
+  """Return days in month, accounting for leap years"""
   month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  # JAN..DEC
 
   days = month_days[month - 1] # Count from 0
