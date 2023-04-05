@@ -29,6 +29,10 @@ def calculator():
  
   while should_continue:
     operation_symbol = input("Pick an operation: ")
+    
+    while operation_symbol not in operations:
+      operation_symbol = input("Pick a proper operation: ")
+      
     num2 = float(input("What's the next number?: "))
     calculation_function = operations[operation_symbol]
     answer = calculation_function(num1, num2)
