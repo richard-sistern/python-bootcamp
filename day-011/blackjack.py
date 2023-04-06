@@ -17,9 +17,6 @@
 ## Cards are not removed from the deck as they are drawn.
 ## The computer is the dealer.
 
-
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-
 # Demo output:
 #    Your cards: [3, 10], current score: 13
 #    Computer's first card: 8
@@ -30,6 +27,56 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 #    Computer's final hand: [8, 10], final score: 18
 # You went over. You lose 😭
 # Do you want to play a game of Blackjack? Type 'y' or 'n': 
+
+import random
+from art import logo
+print(logo)
+
+
+def deal_card(times):
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+    dealt_cards = []
+
+    for _ in range(times):
+        dealt_cards.append(random.choice(cards)) 
+    
+    return dealt_cards
+
+def play_round():
+    player_cards = deal_card(2)
+    player_score = sum(player_cards)
+
+    computer_cards = deal_card(1)
+
+    print(f"Your cards: {player_cards}, current score: {player_score}")
+    print(f"Computer's first card: {computer_cards}")
+
+    answer = 'y'
+    while answer == 'y':
+        answer = input("Type 'y' to get another card, type 'n' to pass: ")
+
+        if answer == 'y':
+            player_cards.append(deal_card(1))
+            player_score = sum(player_cards)
+
+            computer_cards.append(deal_card(1))
+
+            print(f"Your cards: {player_cards}, current score: {player_score}")
+            print(f"Computer cards: {computer_cards}")
+            
+            if player_score > 21:
+                 print("You went over. You lose 😭")
+
+                       
+
+play_round()
+
+
+
+
+
+
 
 
 
