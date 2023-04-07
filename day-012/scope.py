@@ -8,7 +8,7 @@ def increase_enemies():
 
 
 def increase_enemies_global():
-  global enemies
+  global enemies # Should be avoided where possible
   enemies +=2 # Local scope
   print(f"enemies inside function with global: {enemies}")
 
