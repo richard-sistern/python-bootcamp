@@ -16,3 +16,11 @@ increase_enemies()
 print(f"enemies outside function: {enemies}")
 
 increase_enemies_global()
+
+
+# The right  way to modify global scope from a func
+def increase_enemies_proper():
+  return enemies + 1 
+
+enemies = increase_enemies_proper()
+print(enemies)
