@@ -24,3 +24,6 @@ def increase_enemies_proper():
 
 enemies = increase_enemies_proper()
 print(enemies)
+
+# Global constants
+PI = 3.14 # Naming convention is to uppercase constants
