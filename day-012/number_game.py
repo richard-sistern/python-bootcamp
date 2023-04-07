@@ -51,4 +51,3 @@ for i in range(guesses, 0, -1):
     result = make_a_guess(i)
     if result:
         break
-    #guesses -= 1
