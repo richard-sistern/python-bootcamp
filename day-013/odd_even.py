@@ -10,7 +10,7 @@
 
 # Review the previous lesson and go through the 10 steps to tackle these debugging problems.
 
-number = int(input("Which number do you want to check?"))
+number = int(input("Which number do you want to check? "))
 
 if number % 2 == 0:
   print("This is an even number.")
