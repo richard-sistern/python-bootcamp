@@ -15,6 +15,11 @@ def new_option():
 def format_option(option):
     return f'{option["name"]}, a {option["description"]}, from {option["country"]}.'
 
+def check_answer(guess, a_followers, b_followers):
+    if a_followers > b_followers:
+        return guess == "A"
+    else:
+        return guess == "B"
 
 current_score = 0
 correct_answer = True
@@ -38,12 +43,7 @@ while correct_answer:
 
     answer = input("Who has more followers? Type 'A' or 'B': ")
 
-    if answer == "A" and option_a["follower_count"] > option_b["follower_count"]:
-        current_score += 1
-
-        option_a = option_b
-        option_b = new_option()
-    elif answer == "B" and option_b["follower_count"] > option_a["follower_count"]:
+    if check_answer(answer, option_a["follower_count"], option_b["follower_count"]): #answer == "A" and option_a["follower_count"] > option_b["follower_count"]:
         current_score += 1
 
         option_a = option_b
