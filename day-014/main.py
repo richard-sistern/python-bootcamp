@@ -11,23 +11,30 @@ print(logo)
 def new_option():
     return random.choice(data)
 
+# DONE: Print option
+def format_option(option):
+    return f'{option["name"]}, a {option["description"]}, from {option["country"]}.'
+
 
 current_score = 0
 correct_answer = True
 
 option_a = new_option()
 option_b = new_option()
+while option_a == option_b:
+    option_b = new_option()
+
 
 while correct_answer:
 
     if current_score > 0:
         print(f"You're right! Current score: {current_score}.")
         
-    print(f'Compare A: {option_a["name"]}, a {option_a["description"]}, from {option_a["country"]}.')
+    print(f'Compare A: {format_option(option_a)}')
 
     print(vs)
 
-    print(f'Compare B: {option_b["name"]}, a {option_b["description"]}, from {option_b["country"]}.')
+    print(f'Compare B: {format_option(option_b)}')
 
     answer = input("Who has more followers? Type 'A' or 'B': ")
 
