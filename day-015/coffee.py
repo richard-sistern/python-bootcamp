@@ -42,13 +42,24 @@ def print_report(resources, money):
 
 def check_resources(order):
     """Returns True if sufficient resources for order, otherwise False"""
-    
+
     for item in order:
         if order[item] > resources[item]:
             print(f"Sorry there is not enough {item}.")
             return False
         
     return True
+
+def take_coins():
+    """Returns total money from inserted coins"""
+    print("Please insert coins.")
+
+    total = int(input("how many quarters?: ")) * 0.25
+    total += int(input("how many dimes?: ")) * 0.1
+    total += int(input("how many nickles?: ")) * 0.05
+    total += int(input("how many pennies?: ")) * 0.01
+
+    return total
 
 # Requirements
 
@@ -69,6 +80,12 @@ while choice != "off":
     elif choice == "off":
         print("Powering off.")
     elif choice in MENU:
-        print(f"{choice}")
+        order = MENU[choice]
+        if check_resources(order["ingredients"]):
+            print("Creating...")
+
+            payment = take_coins()
+
+            
     else:
         print("Error creating HOT JAVA LAVA.")
