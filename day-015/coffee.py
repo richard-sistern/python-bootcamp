@@ -62,10 +62,10 @@ def take_coins():
     """Returns total money from inserted coins"""
     print("Please insert coins.")
 
-    total = int(input("how many quarters?: ")) * 0.25
-    total += int(input("how many dimes?: ")) * 0.1
-    total += int(input("how many nickles?: ")) * 0.05
-    total += int(input("how many pennies?: ")) * 0.01
+    total = int(input("how many quarters?: ") or 0) * 0.25
+    total += int(input("how many dimes?: ") or 0) * 0.1
+    total += int(input("how many nickles?: ") or 0) * 0.05
+    total += int(input("how many pennies?: ") or 0) * 0.01
 
     return total
 
