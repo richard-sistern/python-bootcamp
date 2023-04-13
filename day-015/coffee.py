@@ -1,3 +1,11 @@
+# Requirements
+
+# - Print report
+# - Check resources sufficient
+# - Proccess Coins
+# - Check transaction successful
+# - Make coffee
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -61,13 +69,25 @@ def take_coins():
 
     return total
 
-# Requirements
-
-# - Print report
-# - Check resources sufficient
-# - Proccess Coins
-# - Check transaction successful
-# - Make coffee
+def sell_soul_for_coffee(payment, drink_cost):
+    """Returns True when payment accepted, otherwise False."""
+    if payment >= drink_cost:
+        change = round(payment - drink_cost, 2)
+        print(f"Here is ${change} in change.")
+        
+        global money
+        money += drink_cost
+        
+        return True
+    else:
+        print("Sorry that's not enough money. Money refunded.")
+        
+        return False
+    
+def make_a_brew(order_ingredients):
+    """Deduct coffee ingredients from total resources."""
+    for item in order_ingredients:
+        resources[item] -= order_ingredients[item]
 
 choice = ""
 
@@ -82,10 +102,10 @@ while choice != "off":
     elif choice in MENU:
         order = MENU[choice]
         if check_resources(order["ingredients"]):
-            print("Creating...")
-
             payment = take_coins()
 
-            
+            if sell_soul_for_coffee(payment, order["cost"]):
+                make_a_brew(order["ingredients"])
+                print(f"Here is your {choice} ☕️. Enjoy!")    
     else:
         print("Error creating HOT JAVA LAVA.")
