@@ -1,3 +1,3 @@
-import turtle
+from turtle import turtle 
 
-timmy = turtle.Turtle()
+timmy = Turtle() # Classes use Pascal case
