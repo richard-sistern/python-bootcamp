@@ -8,3 +8,7 @@ file.close() # Free resources
 with open("./day-024-file/my_file.txt") as file2:
     contents = file2.read()
     print(contents)
+
+# Append
+with open("./day-024-file/my_file.txt", mode="a") as file3:
+    file3.write("\npew pew pew")
